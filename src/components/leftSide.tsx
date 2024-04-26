@@ -8,7 +8,9 @@ export function LeftSide() {
 			<h2 className="text-xl">Front-end Engineer</h2>
 			<p className="text-base opacity-60">I build websites and stuff with exciting and performant 3D scenes.</p>
 			<Nav />
-			<Links />
+			<div className="absolute bottom-32 max-md:static">
+				<Links />
+			</div>
 		</div>
   );
 }

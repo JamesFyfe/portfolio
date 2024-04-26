@@ -20,7 +20,7 @@ export const Nav: React.FC = () => {
 
   return (
     <nav className='max-md:hidden'>
-      <ul className="list-none space-y-2 mt-24 text-gray-500">
+      <ul className="list-none space-y-2 mt-16 text-gray-500">
         <li
           onClick={() => handleNavClick(aboutRef, 'about')}
           className={`cursor-pointer ${selectedSection === 'about' ? 'text-white' : ''}`}
