@@ -1,6 +1,6 @@
 export function Links() {
   return (
-    <div className="space-x-4 mt-16">
+    <div className="space-x-4 mt-8">
       <a 
         href="https://www.linkedin.com/in/jamesfyfe/"
         target="_blank"

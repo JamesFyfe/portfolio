@@ -1,20 +1,23 @@
 'use client';
 
-import { LeftSide } from "~/components/leftSide";
+import { Profile } from "~/components/profile";
 import { MainContent } from "~/components/mainContent";
 import { ScrollProvider } from "~/components/scrollContext";
 
 export default function HomePage() {
   return (
     <ScrollProvider>
-      <main className="grid grid-cols-1 md:grid-cols-10 h-screen max-w-7xl m-auto mt-4">
-        <div className="md:col-start-2 md:col-span-2 fixed m-12 h-full max-md:static">
-          <LeftSide />
+      <div className="grid grid-cols-1 lg:grid-cols-12 max-w-7xl mx-auto sm:px-12 lg:px-16">
+        <header className="w-112 lg:col-span-5 lg:sticky lg:top-0 lg:max-h-screen">
+          <Profile />
+        </header>
+        <div className="m-8 lg:hidden sm:block">
+          <hr className="border-white border-1 rounded-sm opacity-30" />
         </div>
-        <div className="md:col-start-5 md:col-span-6 mr-12 ml-12 md:mt-12">
+        <main className="lg:col-start-6 lg:col-span-7">
           <MainContent />
-        </div>
-      </main>
+        </main>
+      </div>
     </ScrollProvider>
   );
 }
