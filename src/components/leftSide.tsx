@@ -3,12 +3,12 @@ import { Links } from "./links";
 
 export function LeftSide() {
   return (
-		<>
-			<h1 className="text-6xl font-semibold">James Fyfe</h1>
-			<h2>Front-end Engineer</h2>
-			<p>I build websites and stuff with exciting and performant 3D scenes.</p>
+		<div className="space-y-4">
+			<h1 className="text-5xl font-semibold">James Fyfe</h1>
+			<h2 className="text-xl">Front-end Engineer</h2>
+			<p className="text-base opacity-60">I build websites and stuff with exciting and performant 3D scenes.</p>
 			<Nav />
 			<Links />
-		</>
+		</div>
   );
 }
