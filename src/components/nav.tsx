@@ -19,7 +19,7 @@ export const Nav: React.FC = () => {
   };
 
   return (
-    <nav>
+    <nav className='max-md:hidden'>
       <ul className="list-none space-y-2 mt-24 text-gray-500">
         <li
           onClick={() => handleNavClick(aboutRef, 'about')}
