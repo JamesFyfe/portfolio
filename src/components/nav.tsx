@@ -23,25 +23,25 @@ export const Nav: React.FC = () => {
       <ul className="list-none space-y-2 mt-16 text-gray-500">
         <li
           onClick={() => handleNavClick(aboutRef, 'about')}
-          className={`cursor-pointer hover:text-white ${selectedSection === 'about' ? 'text-white' : ''}`}
+          className={`cursor-pointer hover:text-gray-200 ${selectedSection === 'about' ? 'text-gray-200' : ''}`}
         >
           About
         </li>
         <li
           onClick={() => handleNavClick(skillsRef, 'skills')}
-          className={`cursor-pointer hover:text-white ${selectedSection === 'skills' ? 'text-white' : ''}`}
+          className={`cursor-pointer hover:text-gray-200 ${selectedSection === 'skills' ? 'text-gray-200' : ''}`}
         >
           Skills
         </li>
         <li
           onClick={() => handleNavClick(experienceRef, 'experience')}
-          className={`cursor-pointer hover:text-white ${selectedSection === 'experience' ? 'text-white' : ''}`}
+          className={`cursor-pointer hover:text-gray-200 ${selectedSection === 'experience' ? 'text-gray-200' : ''}`}
         >
           Experience
         </li>
         <li
           onClick={() => handleNavClick(projectsRef, 'projects')}
-          className={`cursor-pointer hover:text-white ${selectedSection === 'projects' ? 'text-white' : ''}`}
+          className={`cursor-pointer hover:text-gray-200 ${selectedSection === 'projects' ? 'text-gray-200' : ''}`}
         >
           Projects
         </li>

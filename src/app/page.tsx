@@ -1,10 +1,11 @@
 'use client';
 
-import { Profile } from "~/components/profile";
-import { MainContent } from "~/components/mainContent";
+import Profile from "~/components/profile";
+import MainContent from "~/components/mainContent";
 import { ScrollProvider } from "~/components/scrollContext";
 
-export default function HomePage() {
+
+const HomePage: React.FC = () => {
   return (
     <ScrollProvider>
       <div className="grid grid-cols-1 lg:grid-cols-12 max-w-7xl mx-auto sm:px-12 lg:px-16">
@@ -21,3 +22,5 @@ export default function HomePage() {
     </ScrollProvider>
   );
 }
+
+export default HomePage;

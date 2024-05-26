@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
+import BackgroundScene from "../backgroundScene/backgroundScene";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,7 +21,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>{children}</body>
+      <body>
+        <div className="fixed w-full h-full -z-10 opacity-50">
+          <BackgroundScene />
+        </div>
+        <div className={`font-sans ${inter.variable}`}>{children}</div>
+      </body>
     </html>
   );
 }
