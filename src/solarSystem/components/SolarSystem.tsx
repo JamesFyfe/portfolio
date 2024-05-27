@@ -15,7 +15,7 @@ const SolarSystem = memo(() => {
 
   return (
     <div className='h-full overflow-hidden'>
-      <Canvas camera={{ far: 25000000, near: Constants.cameraNear }} gl={{logarithmicDepthBuffer: true}}>
+      <Canvas camera={{ far: 25000000 }} gl={{logarithmicDepthBuffer: true}}>
         <Effects multisamping={8} renderIndex={1} disableGamma={true}>
           <unrealBloomPass threshold={0.4} strength={2.5} radius={0.7} />
         </Effects>
