@@ -1,7 +1,7 @@
 import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
-import BackgroundScene from "../backgroundScene/backgroundScene";
+import BackgroundScene from "../solarSystem/backgroundScene";
 
 const inter = Inter({
   subsets: ["latin"],

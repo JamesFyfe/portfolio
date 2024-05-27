@@ -1,0 +1,74 @@
+[
+  {
+    "id": "0",
+    "name": "Sun",
+    "clickable": true,
+    "physicalData": {
+      "mass": 1989000,
+      "radius": 696.34,
+      "color": "rgb(130, 130, 70)",
+      "textureName": "sun_texture.jpeg",
+      "axisTilt": 7.25,
+      "rotationPeriod": 587.28,
+      "startingRotation": 0,
+      "lightIntensity": 40000000000
+    },
+    "children": [
+      {
+        "id": "0-2",
+        "name": "Earth",
+        "clickable": true,
+        "physicalData": {
+          "mass": 5.9722,
+          "radius": 6.371,
+          "color": "rgb(90, 120, 170)",
+          "textureName": "earth_texture.jpg",
+          "axisTilt": 23.44,
+          "rotationPeriod": 23.93446958333,
+          "startingRotation": 0
+        },
+        "orbitData": {
+          "semiMajorAxis": 149598,
+          "eccentricity": 0.01671022,
+          "inclination": 0,
+          "meanAnomaly": 100.46457166,
+          "meanAnomalyPerCentury": 35999.37244981,
+          "longitudeOfAscendingNode": 0,
+          "longitudeOfPeriapsis": 102.93768193
+        },
+        "atmosphere": {
+          "color": "rgb(90, 120, 160)",
+          "layers": 12,
+          "thickness": 0.04,
+          "opacity": 0.4
+        },
+        "children": [
+          {
+            "id": "0-2-0",
+            "name": "Moon",
+            "clickable": true,
+            "physicalData": {
+              "mass": 0.07346057605083464,
+              "radius": 1.7374,
+              "color": "rgb(100, 100, 100)",
+              "textureName": "moon_texture.jpeg",
+              "axisTilt": 1.5,
+              "rotationPeriod": 655.728,
+              "startingRotation": 295
+            },
+            "orbitData": {
+              "semiMajorAxis": 384.4,
+              "eccentricity": 0.0554,
+              "inclination": 5.16,
+              "meanAnomaly": 224,
+              "meanAnomalyPerCentury": 481260.5226557353,
+              "longitudeOfAscendingNode": 125.08,
+              "argumentOfPeriapsis": 318.15,
+              "frame": "ecliptic"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
