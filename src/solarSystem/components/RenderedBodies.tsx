@@ -1,13 +1,20 @@
-import { useState } from "react";
-import CelestialBody, { createCelestialBodyFromJSON } from "../classes/CelestialBody";
+import { createCelestialBodyFromJSON } from "../classes/CelestialBody";
+import type CelestialBody from "../classes/CelestialBody";
+import type { CelestialBodyData } from "../classes/CelestialBody";
 import { AnimationLoop } from "../utils/AnimationLoop";
 import { CelestialBodyRenderer } from "./CelestialBodyRenderer";
+import data from '../data/PlanetData.json';
 
-export default function RenderedBodies({dateRef}: {dateRef: React.MutableRefObject<Date>}) {
-  const data = require('../data/PlanetData.json');
-  const sun = createCelestialBodyFromJSON(data[0]);
-  const earth = sun.children[0] as CelestialBody;
-  const moon = earth.children[0] as CelestialBody;
+export default function RenderedBodies() {
+  const sun = createCelestialBodyFromJSON(data as CelestialBodyData);
+  if(!sun.children) {
+    return;
+  }
+  const earth = sun.children[0]!;
+  if(!earth.children) {
+    return;
+  }
+  const moon = earth.children[0]!;
   const visibleBodies: CelestialBody[] = [sun, earth, moon];
 
   AnimationLoop({ visibleBodies });

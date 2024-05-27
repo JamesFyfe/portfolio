@@ -1,11 +1,10 @@
 import React, { useRef } from 'react';
-import { BufferGeometry, Float32BufferAttribute, ShaderMaterial, Color, Points } from 'three';
-import { extend, useFrame, useThree } from '@react-three/fiber';
+import { BufferGeometry, Float32BufferAttribute } from 'three';
+import type { Points } from 'three';
+import { useFrame, useThree } from '@react-three/fiber';
 import starData from '../data/StarData.json';
 import spectralTypeColors from '../data/SpectralTypeColors';
 import * as THREE from 'three';
-
-// extend(ShaderMaterial);
 
 interface Star {
   catalog_number: number;
@@ -46,7 +45,7 @@ const BackgroundStars: React.FC = () => {
   const sizes = new Float32Array(numStars);
 
   starData.forEach((star: Star, index: number) => {
-    let { ra, dec, spectral_type, magnitude, catalog_number } = star;
+    const { ra, dec, spectral_type, magnitude } = star;
     const phi = ra;
     const theta = Math.PI / 2 - dec;
     const x = Math.cos(phi) * Math.sin(theta) * radius;
@@ -58,14 +57,14 @@ const BackgroundStars: React.FC = () => {
     positions[index * 3 + 2] = z;
 
     // multiply color based off magnitude so dimmer stars are darker
-    const colorStr = multiplyRGB(spectralTypeColors[spectral_type], (8 - magnitude) / 5);
+    const colorStr = multiplyRGB(spectralTypeColors[spectral_type], (8 - magnitude) / 4);
     const color = new THREE.Color(colorStr);
     // const color = new THREE.Color(spectralTypeColors[spectral_type]);
     colors[index * 3] = color.r;
     colors[index * 3 + 1] = color.g;
     colors[index * 3 + 2] = color.b;
 
-    sizes[index] = (8 - magnitude) ** 2.2;
+    sizes[index] = 25 + (8 - magnitude) ** 2;
   });
 
   function multiplyRGB(colorString: string | undefined, mult: number): string {

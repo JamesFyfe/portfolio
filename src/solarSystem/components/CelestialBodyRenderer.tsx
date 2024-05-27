@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { memo, useEffect } from "react";
-import CelestialBody from "../classes/CelestialBody";
+import type CelestialBody from "../classes/CelestialBody";
 import Atmosphere from "./Atmosphere";
 import { Clouds } from "./EarthLayers";
 import { CityLights } from "./EarthLayers";
@@ -10,7 +10,7 @@ export const CelestialBodyRenderer = memo(({ body }: { body: CelestialBody }) =>
     if(body.rotatingGroupRef.current) {
       body.rotatingGroupRef.current.rotation.order = 'ZXY';
       // rotate mesh by axis tilt
-      body.rotatingGroupRef.current!.rotation.z = -body.physicalData.axisTilt;
+      body.rotatingGroupRef.current.rotation.z = -body.physicalData.axisTilt;
     }
   }, [body]);
 
@@ -56,3 +56,5 @@ export const CelestialBodyRenderer = memo(({ body }: { body: CelestialBody }) =>
   },
   (prevProps, nextProps) => prevProps.body.id === nextProps.body.id
 );
+
+CelestialBodyRenderer.displayName = "CelestialBodyRenderer";

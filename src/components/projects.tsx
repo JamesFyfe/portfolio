@@ -1,4 +1,5 @@
 import SkillsUsed from "./skillsUsed";
+import Image from 'next/image';
 
 const Projects: React.FC = () => {
 
@@ -34,10 +35,12 @@ const ProjectSection: React.FC<ProjectSectionProps> = (props) => {
       className="grid grid-cols-3 space-y-2 space-x-2 cursor-pointer"
       onClick={handleClick}
     >
-      <img
-        className="col-span-1 my-2"
+      <Image
         src={`/images/${props.imageName}`}
         alt={props.title}
+        width={200}
+        height={100}
+        layout="responsive"
       />
       <div className="col-span-2 space-y-4">
         <h1 className="text-gray-200">{props.title}</h1>

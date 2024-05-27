@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { useFrame, useThree } from '@react-three/fiber';
-import CelestialBody from '../classes/CelestialBody';
+import type CelestialBody from '../classes/CelestialBody';
 import Constants from '../Constants';
 import { useRef } from 'react';
 
@@ -10,7 +10,7 @@ interface AnimationLoopOptions {
 
 export function AnimationLoop({ visibleBodies }: AnimationLoopOptions) {
   const camera = useThree((state) => state.camera);
-  let dateRef = useRef(Constants.startDate);
+  const dateRef = useRef(Constants.startDate);
   
   const earthRef = useRef(visibleBodies[1]!);
 
@@ -18,7 +18,7 @@ export function AnimationLoop({ visibleBodies }: AnimationLoopOptions) {
 
 	useFrame(( state, delta ) => {
     const earth = earthRef.current;
-    if(!earth || !earth.threeGroupRef.current) {
+    if(!earth.threeGroupRef.current) {
       return;
     }
     dateRef.current = new Date(dateRef.current.getTime() + delta * 1000 * Constants.timeMultiple);

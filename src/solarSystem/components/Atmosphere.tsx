@@ -1,6 +1,9 @@
-import CelestialBody from "../classes/CelestialBody";
+import type CelestialBody from "../classes/CelestialBody";
 
 export default function Atmosphere({ body }: { body: CelestialBody }) {
+  if(!body.atmosphereData) {
+    return;
+  }
   const layerScaleFactor = 1 + (body.atmosphereData.thickness / body.atmosphereData.layers);
 
   let layerOpacity = body.atmosphereData.opacity/6;

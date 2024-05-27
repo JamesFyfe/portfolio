@@ -22,9 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="fixed w-full h-full -z-10 opacity-50">
-          <BackgroundScene />
-        </div>
+        <BackgroundScene />
         <div className={`font-sans ${inter.variable}`}>{children}</div>
       </body>
     </html>
